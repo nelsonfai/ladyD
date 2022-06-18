@@ -1,0 +1,238 @@
+{% load static  %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LadyD events Responsive</title>
+    
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="{% static 'styleladyd.css'%}">
+
+    <link href="https://fonts.googleapis.com/css2?family=Licorice&family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&family=Poppins:wght@200&display=swap" rel="stylesheet">
+<link href="https://css.gg/css?=|info" rel="stylesheet"><!-- ICONS-->
+<link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header id="top">
+        
+        <div class="logo">
+            <a href="../home"><img src="/media/ladyd-logo_2.png" alt="logo image"></a>
+        </div >
+
+        
+        <nav>
+            <span   onclick="myToggle()" class="hamburger" oncl> &#9776;</span> 
+            
+            <script>
+                function myToggle() {
+                  var x = document.getElementById("toggle");
+                  if (x.style.display === "none") {
+                    x.style.display = "block";
+                  } else {
+                    x.style.display = "none";
+                  }
+                }
+                </script>
+            
+            <ul  id="toggle">
+                <a href="../home"> <li> Home </li></a>
+                
+                <a href="#"> <li> About </li></a>
+                <a href="#contact"> <li> Contact </li></a>
+                <a href="#services"> <li> Services </li></a>
+               
+                <a href="#contact"> <li id="gitBtn"><button> Get in touch</button> </li></a>
+                
+            </ul>
+           
+        </nav>
+       
+    </header>
+   
+
+
+    <section class="hero">
+        <div class="card"> 
+             
+                <p>  L </p> 
+                <div class="pop">  Your satisfaction is our priority</div> 
+        </div>
+        
+        <div class="card">
+                <p> a </p>
+        <div class="pop"> Let's plan your next big day</div>        
+
+        </div>
+        
+        <div class="card">
+                <p> d </p>
+                <div class="pop">We turn your big dreams to big events</div> 
+
+        </div>
+        
+        <div class="card">
+                <p> y' </p> 
+                <div class="popup name"> events </div>
+                 
+
+         </div>
+
+        <div class="card">
+                 <p> D </p>
+                 <div class="pop">  Lets's make your next big moment</div> 
+
+
+        </div>     
+    </section  >
+
+    
+ <section id="services" class="services">
+     <p class="service-head"> Service </p>
+    <div class="event-container"> 
+        
+        <div class="events">
+           <div class="events-g1">
+                    <div class="event-box">
+                        <p> Birthday Party </p>
+                    </div>
+
+                    <div class="event-box">
+                        Theme Party
+                    </div>
+
+                    <div class="event-box">
+                        Bridal Shower
+                    </div>
+
+                    <div class="event-box">
+                        Baby Shower
+                    </div>
+            </div>
+            <div class="events-g2">
+                <div class="event-box">
+                    Reunions 
+                </div>
+                <div class="event-box">
+                    Small Parties  
+                </div>
+
+                <div class="event-box">
+
+                    Corporate Events
+                </div>
+                <div class="event-box">
+                    Small Parties  
+                </div>
+                    
+                </div>
+            </div> 
+            
+        </div>
+
+    </div>
+    {% for items in service %}
+    <div class="container">
+       
+        <div class="service-image"> <img src={{items.service_image.url}} alt="image-left" alt="image-left" width="320" height="420"></div>
+        <div class="service-text">
+            <h3 > {{items.title}}...</h3>
+            <p>{{items.body}} </p>
+        <a href="#contact"> <button>Book a consult</button></a>
+        </div>
+        
+    </div>
+ <hr>
+ {% endfor %}
+   
+
+   <section id="contact" class="contact" >
+       <p class="contact-head">Contact us</p>
+       <div class="contact-container">
+            <div class="contact-form"> 
+                
+                <form  method ="post"   onsubmit="myFunction()">
+                {% csrf_token %}
+                
+                        <input type="text" id="name" name="fname" required="required" placeholder="Full name"><br>
+                        
+                        <input type="email" id="email" name="email" required="required" placeholder="Email"><br>
+                        <input type="text" id="subject" name="subject" required="required" placeholder="Subject"><br>
+                    
+                        <textarea  name="message" id="msg"  rows="6" placeholder="Message"></textarea><br>
+                        <br>
+                        
+                        <input  id ="btn" type="submit" value="Submit" >
+                        
+                        <script > function myFunction() {
+    
+                            alert('Your message has been sent 📨') ; }     
+                            
+                               
+                            
+                        </script> 
+              </form>
+              
+             
+                
+            
+
+            </div> 
+
+            <div class="contact-info-box ">
+                  <h1 class="head">Get in touch</h1>
+                  <P> Reach us for all inquiries and Lorem,  Lorem ipsum dolor sit amet.
+                      ipsum dolor sit amnventore, quibusdam.</P><br>
+                  
+                  <h3 >Mail <span>&#9993;</span></h3>
+                  
+                  <p> info@ladydevents.com</p><br>
+                  <h3 >Phone <span>&#x2706;</span></h3>
+                  <p> +12 5486485 254 </p><br>
+                  <h3 >Address <span>&#10733;</span></h3>
+                  <Address>123. ABC strae ,47712 Germany</Address><br>
+              
+             
+            </div>
+           
+            
+        </div>  
+    </section>
+ </section>
+
+ <footer>
+     
+      
+         <p> Follow Us!</p>
+         <div class="social"> 
+            <a href="https://www.instagram.com/diayan_/"  target="_blank" class="fa fa-facebook"></a>
+            <a href="https://www.instagram.com/diayan_/" target="_blank" class="fa fa-instagram"></a>
+            <a href="https://www.instagram.com/diayan_/" target="_blank" class="fa fa-linkedin"></a>
+            <a href="https://www.instagram.com/diayan_/"  target="_blank"class="fa fa-youtube"></a>
+            <a href="https://www.instagram.com/diayan_/" target="_blank" class="fa fa-twitter"></a>
+        
+    </div>
+     <div class="foot-links">
+        <ul>
+            <a href="../home"> <li> Home </li></a>
+            <a href="#"> <li> About </li></a>
+            <a href="#services"> <li> Services </li></a>
+            <a href="#contact"> <li> Contact </li></a>
+            <a href="#contact"> <li id="gitBtn"><button> Get in touch</button> </li></a>
+        </ul>
+    </div>
+    <p> <span>&#169;</span> Lady D events. All rights reserved</p>
+    
+ </footer>
+    
+</body>
+</html>
